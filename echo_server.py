@@ -19,7 +19,7 @@ def start_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.listen(2)
+        s.listen()
         conn, addr = s.accept()
 
         handle_connection(conn, addr)
