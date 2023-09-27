@@ -7,7 +7,7 @@ PROXY_SERVER_PORT = 8080
 
 def send_request(host, port, request): 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-        client_socket.connect({host, port})
+        client_socket.connect((host, port))
         client_socket.send(request)
         client_socket.shutdown(socket.SHUT_WR)
 
