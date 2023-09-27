@@ -12,8 +12,8 @@ def handle_connection(conn, addr):
             data = conn.recv(BYTES_TO_READ)
             if not data:
                 break 
-                print(data)
-                conn.sendall(data)
+            print(data)
+            conn.sendall(data)
 
 def start_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
